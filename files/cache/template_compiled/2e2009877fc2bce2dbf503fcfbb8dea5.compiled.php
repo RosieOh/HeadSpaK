@@ -1,0 +1,141 @@
+<?php if(!defined("__XE__"))exit;
+if($__Context->lang_type == 'ko'){ ?>
+<link href="content_20220427.css" rel="stylesheet" type="text/css" />
+<div class="tab08_wrap">
+	<section class="tab08_sec" id="tab08_08">
+		<div class="tab08_con">
+			<div class="tab08_pt_wrap wrap_01">
+				<div class="tab08_pt">
+					<div class="tab08_txt">
+						<h3>모션베드</h3>
+						<h4>헤드스파K에서 고객에게 편안함을 주기위한 요소로 자사 모션 베드를 사용합니다.</h4>
+						<ul>
+							<li>
+								<h5>모션베드</h5>
+								<p>
+									모션 베드는 내구성이 우수한 최고급 소재의 원단과 복원력이 우수한 고탄성 폴리 우레탄 소재의 FORM을 사용하여
+									장기간 사용에도 원형을 유지하여, 항상 새제품으로 설치한 분위기를 연출합니다.
+									</br>
+									</br>
+									의자의 내구성과 사용의 편리성의 중요한 역할을 하는 유압식 베이스의 각 부품들은 특수한 소재를 이용하여 제조되며,
+									내구성 강화를 위한 특별한 가공 공정으로 관리되어 최상의 성능을 발휘 하도록 만들어졌습니다.
+								</p>
+							</li>
+						</ul>
+					</div>
+				</div>
+				<div class="tab08_pt">
+					<div class="tab08_img">
+						<img src="/modules/page/skins/03-04-instrument/img/08-02.jpg">
+						<div class="tab01_img_sq">모션베드</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+	<section class="tab08_sec" id="tab08_02">
+		<div class="tab08_con">
+			<div class="tab08_02_title">
+				<h1>제원 및 명칭</h1>
+				<div></div>
+			</div>
+			<div class="tab08_02_01_wrap">
+				<div class="tab08_02_03_img">
+					<img src="/modules/page/skins/03-04-instrument/img/08-02-03.jpg" alt="08-02-03.jpg">
+				</div>
+			</div>
+	</section>
+</div>
+<?php }else if($__Context->lang_type == 'en'){ ?>
+<link href="content_20220427.css" rel="stylesheet" type="text/css" />
+<div class="tab08_wrap">
+	<section class="tab08_sec" id="tab08_08">
+		<div class="tab08_con">
+			<div class="tab08_pt_wrap wrap_01">
+				<div class="tab08_pt">
+					<div class="tab08_txt">
+						<h3>Motion Bed</h3>
+						<h4>Headspa K uses its own motion bed as an element of comfort for customers.</h4>
+						<ul>
+							<li>
+								<h5>Motion Bed</h5>
+								<p>
+									The motion bed is made of durable top-quality fabric and resilient high-elastic polyurethane FORM to maintain its original shape even after long-term use,
+									creating a new atmosphere.
+									</br>
+									</br>
+									Each part of the hydraulic base, which plays an important role in the durability and ease of use of the chair,
+									is manufactured with special materials and is managed by a special processing process to enhance durability to achieve the best performance.
+								</p>
+							</li>
+						</ul>
+					</div>
+				</div>
+				<div class="tab08_pt">
+					<div class="tab08_img">
+						<img src="/modules/page/skins/03-04-instrument/img/08-02.jpg">
+						<div class="tab01_img_sq">Motion Bed</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+	<section class="tab08_sec" id="tab08_02">
+		<div class="tab08_con">
+			<div class="tab08_02_title">
+				<h1>Specifications and names</h1>
+				<div></div>
+			</div>
+			<div class="tab08_02_01_wrap">
+				<div class="tab08_02_03_img">
+					<img src="/modules/page/skins/03-04-instrument/img/08-02-04.jpg" alt="08-02-04.jpg">
+				</div>
+			</div>
+	</section>
+</div>
+<?php }else if($__Context->lang_type == 'zh-CN'){ ?>
+<link href="content_20220427.css" rel="stylesheet" type="text/css" />
+<div class="tab08_wrap">
+	<section class="tab08_sec" id="tab08_08">
+		<div class="tab08_con">
+			<div class="tab08_pt_wrap wrap_01">
+				<div class="tab08_pt">
+					<div class="tab08_txt">
+						<h3>洗发椅</h3>
+						<h4>Head Spa K为了给顾客带来舒适感，使用总公司的洗发椅。</h4>
+						<ul>
+							<li>
+								<h5>洗发椅</h5>
+								<p>
+									洗发椅采用耐用性好的最高级材质面料和复原力优秀的高弹性聚氨酯材质FORM，长期使用也能保持原形，始终展现新产品的氛围。
+									</br>
+									</br>
+									在椅子的耐久性和使用便利性中起重要作用的液压式底座各部件均使用特殊材料制成，采用强化耐久性的特殊加工工艺进行管理，可发挥最佳性能
+								</p>
+							</li>
+						</ul>
+					</div>
+				</div>
+				<div class="tab08_pt">
+					<div class="tab08_img">
+						<img src="/modules/page/skins/03-04-instrument/img/08-02.jpg">
+						<div class="tab01_img_sq">洗发椅</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+	<section class="tab08_sec" id="tab08_02">
+		<div class="tab08_con">
+			<div class="tab08_02_title">
+				<h1>参数及名称</h1>
+				<div></div>
+			</div>
+			<div class="tab08_02_01_wrap">
+				<div class="tab08_02_03_img">
+					<img src="/modules/page/skins/03-04-instrument/img/08-02-03.jpg" alt="08-02-03.jpg">
+				</div>
+			</div>
+	</section>
+</div>
+<?php } ?>

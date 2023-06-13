@@ -1,0 +1,36 @@
+<!--//module check -->
+{@ $sub_header_title = $module_info->browser_title}
+{@ $_container_class = array()}
+{@ $_content_class = array()}
+{@ $_aside_class = array()}
+{@ $_nopadding_class = array()}
+{@ $_disp_act = array(
+	'dispMemberSignUpForm',
+	'dispMemberLoginForm',
+	'dispMemberFindAccount',
+	'dispMemberInfo',
+	'dispMemberModifyPassword',
+	'dispMemberModifyEmailAddress',
+	'dispMemberModifyInfo',
+	'dispMemberLeave',
+	'dispMemberScrappedDocument',
+	'dispMemberSavedDocument',
+	'dispMemberOwnDocument',
+	'dispCommunicationFriend',
+	'dispCommunicationMessages',
+	'dispNcenterliteUserConfig',
+	'dispNcenterliteNotifyList',
+	'dispLoginxeclientListProvider',
+	'dispAjaxboardNotificationConfig',
+	'IS'
+)}
+
+<!--//setting -->
+<block cond="in_array($act, $_disp_act)">{@ $layout_info->layout_type = 'sub'}</block>
+
+<block cond="!$layout_info->subtop_use">{@ $layout_info->subtop_use = 'Y'}</block>
+<block cond="!$layout_info->subtop_height">{@ $layout_info->subtop_height = '400'}</block> 
+<block cond="!$layout_info->subtop_color">{@ $layout_info->subtop_color = '#333'}</block> 
+<block cond="!$layout_info->subtop_txt_use">{@ $layout_info->subtop_txt_use = 'Y'}</block>
+<block cond="!$layout_info->subtop_txt_color">{@ $layout_info->subtop_txt_color = '#fff'}</block>
+<block cond="!$layout_info->content_width">{@ $layout_info->content_width = '1340'}</block>

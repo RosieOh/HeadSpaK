@@ -1,0 +1,130 @@
+<header id="header">
+	<div class="header_mxwidth">
+		<div class="header_logo_wrap">
+			<a href="{$layout_info->header_logo_link}">
+				<img src="{$layout_info->header_logo}" cond="$layout_info->header_logo">				<!--@if(!$layout_info->header_logo && $layout_info->header_text)-->
+				{$layout_info->header_text}
+				<!--@else if(!$layout_info->header_logo && !$layout_info->header_text)-->
+				<span>GOHOSOLAR</span>
+				<!--@end-->
+			</a>
+		</div>
+		<nav id="header_menu_wrap">
+			<ul class="mo_gnb">
+				<block loop="$GNB->list=>$key1,$val1" cond="$val1['link']">
+					<li class="mo_depth1">
+						<a class="mo_depth_list1"|cond="$val1['list']" href="{$val1['href']}"|cond="!$val1['list']" target="_blank"|cond="$val1['open_window'] == 'Y'" style="color:{$layout_info->point_color}"|cond="$val1['selected']">{$val1['link']}</a>
+						<block cond="$val1['selected']">{@ $_selected_menu = $val1}</block>
+						<ul cond="$val1['list']">
+							<li loop="$val1['list'] => $key2, $val2" class="mo_depth2 <!--@if($val2['list'])-->more<!--@end-->">
+								<a class="mo_depth_list2"|cond="$val2['list']" href="{$val2['href']}"|cond="!$val2['list']" target="_blank"|cond="$val2['open_window'] == 'Y'" style="color:{$layout_info->point_color}"|cond="$val2['selected']">{$val2['link']}</a>
+								<ul cond="$val2['list']">
+									<li loop="$val2['list'] => $key3, $val3" class="mo_depth3">
+										<a href="{$val3['href']}" target="_blank"|cond="$val3['open_window'] == 'Y'" style="color:{$layout_info->point_color}"|cond="$val3['selected']">{$val3['link']}</a>
+									</li>
+								</ul>
+							</li>
+						</ul>
+					</li>
+				</block>
+			</ul>
+			<!--@if($layout_info->member_use=='Y')-->
+			<!-- <ul class="add_menu_wrap">
+				<li class="add_menu member_btn_wrap" cond="$layout_info->member_menu='Y' && !$is_logged"><a class="member_btn_link"><i class="fa fa-lock" aria-hidden="true"></i></a></li>
+				<li class="add_menu member_btn_wrap" cond="$layout_info->member_menu='Y' && $is_logged"><a class="member_btn_link"><i class="xi-user-info"></i></a></li>
+			</ul> -->
+			<!--@end-->
+		</nav>
+		<nav id="mo_menu_wrap">
+			<ul class="mo_menu">
+				<li class="mo_menu"><a class="mo_menu_btn"><i class="fa fa-bars" aria-hidden="true"></i></a></li>
+			</ul>
+		</nav>
+		<ul class="pc_gnb">
+			<block loop="$GNB->list=>$key1,$val1" cond="$val1['link']">
+				<li class="depth1">
+					<a href="{$val1['href']}" target="_blank"|cond="$val1['open_window'] == 'Y'" style="color:{$layout_info->point_color}"|cond="$val1['selected']">{$val1['link']}</a>
+					<block cond="$val1['selected']">{@ $_selected_menu = $val1}</block>
+					<ul cond="$val1['list']">
+						<li loop="$val1['list'] => $key2, $val2" class="depth2 <!--@if($val2['list'])-->more<!--@end-->">
+							<a href="{$val2['href']}" target="_blank"|cond="$val2['open_window'] == 'Y'" style="color:{$layout_info->point_color}"|cond="$val2['selected']">{$val2['link']}</a>
+							<ul cond="$val2['list']">
+								<li loop="$val2['list'] => $key3, $val3" class="depth3">
+									<a href="{$val3['href']}" target="_blank"|cond="$val3['open_window'] == 'Y'" style="color:{$layout_info->point_color}"|cond="$val3['selected']">{$val3['link']}</a>
+								</li>
+							</ul>
+						</li>
+					</ul>
+				</li>
+			</block>
+		</ul>
+		<div class="pc_lang">
+			<button loop="$lang_supported => $key, $val" cond="$lang_type == $key" class="lang_btn"><img src="../img/lang_{$key}.jpg"> {$val}<i class="xi-angle-down pull-right"></i></button>
+			<ul class="gnb_lang_list">
+				<li loop="$lang_supported => $key, $val" cond="$lang_type != $key"><a href="#" onclick="doChangeLangType('{$key}'); return false;"><img src="../img/lang_{$key}.jpg" /> {$val}</a></li>
+			</ul>
+		</div>
+		<div class="mo_lang">
+			<a class="lang_btn_link" title="{$lang->cmd_multilingual}"><i class="xi-globus"></i></a>
+		</div>
+	</div>
+</header>
+<!--@if($layout_info->member_use=='Y')-->
+<aside class="member_menu_wrap">
+	<div class="member_menu_box flex_center">
+		<div class="member_menu">
+			<div class="member_menu_close"><i class="fa fa-times"></i></div>
+			<div cond="$layout_info->profile_desc" class="member_profile_desc">{$layout_info->profile_desc}</div>
+			<form cond="!$is_logged" action="{getUrl()}" method="post" autocomplete="off" class="member_login_form">
+				<input type="hidden" name="act" value="procMemberLogin" />
+				<input type="hidden" name="success_return_url" value="{getRequestUriByServerEnviroment()}" />
+				<input type="hidden" name="xe_validator_id" value="layouts/xedition/layout/1" />
+				<div cond="$XE_VALIDATOR_MESSAGE" class="error_message {$XE_VALIDATOR_MESSAGE_TYPE}"><p>{$XE_VALIDATOR_MESSAGE}</p></div>
+				<fieldset autocomplete="off">
+					<div class="form_wrap">
+						<div class="form flex">
+							<input type="<!--@if($identifierForm->name=='email_address')-->email<!--@else-->text<!--@end-->" name="user_id" id="uid" value="" placeholder="<!--@if($identifierForm->name=='email_address')-->{$lang->email}<!--@else-->{$lang->user_id}<!--@end-->" required />
+						</div>
+						<div class="form flex">
+							<input type="password" name="password" id="upw" value="" placeholder="{$lang->password}" required />
+						</div>
+						<div class="form flex">
+							
+						</div>
+					</div>
+					<div class="keep_login">
+						<input type="checkbox" name="keep_signed" id="keepid_opt" value="Y" onclick="if(this.checked) return confirm('{$lang->about_keep_signed}');">
+						<label class="chk_label" for="keepid_opt">
+						</label>
+						<span>{$lang->keep_signed}</span>
+					</div>
+					<button type="submit" class="login_submit">{$lang->cmd_login}</button>
+				</fieldset>
+				<a href="{getUrl('act', 'dispMemberSignUpForm')}" class="login_submit">{$lang->cmd_signup}</a>
+			</form>
+			<div cond="$is_logged" class="">
+				<ul>
+					<li><a href="/index.php?module=admin" class="admin_btn">{$lang->cmd_management}</a></li>
+				</ul>
+				<ul style="background-color:{$layout_info->menu_background_color};"|cond="$layout_info->menu_background_color">
+					<li loop="$logged_info->menu_list => $key, $val"><a href="{getUrl('act', $key, 'member_srl', '', 'page', '')}">{Context::getLang($val)}</a></li>
+					<li><a href="{getUrl('act', 'dispMemberLogout')}">{$lang->cmd_logout}</a></li>
+				</ul>
+			</div>
+		</div>
+	</div>
+</aside>
+<!--@end-->
+<aside class="lang_menu_wrap">
+	<div class="lang_menu_box flex_center">
+		<div class="lang_menu">
+			<div class="lang_menu_close"><i class="xi-close"></i></div>
+			<div class="lang_title"><h1>LANGUAGE</h1></div>
+			<ul class="lang_list">
+				<li loop="$lang_supported=>$key,$val">
+					<a class="selected"|cond="$lang_type == $key" href="" onclick="doChangeLangType('{$key}'); return false;"><img src="../img/lang/{$key}.png"> {$val}</a>
+				</li>
+			</ul>
+		</div>
+	</div>
+</aside>

@@ -1,0 +1,9 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<lang>
+	<item name="user_manager">
+		<value xml:lang="ko"><![CDATA[회원 정보]]></value>
+		<value xml:lang="en"><![CDATA[Member Menu]]></value>
+		<value xml:lang="jp"><![CDATA[會員情報]]></value>
+		<value xml:lang="jp"><![CDATA[会员情报]]></value>
+	</item>
+</lang>

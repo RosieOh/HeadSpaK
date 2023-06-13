@@ -1,0 +1,27 @@
+<?php
+$lang->contact='Contact Us';
+$lang->contact_management='Contact Us 管理';
+$lang->about_contact='此模块用于搭建和管理 Contact Us页面.';
+$lang->cmd_contact_list='Contact Us 列表';
+$lang->cmd_create_contact='新建 Contact Us';
+$lang->cmd_contact_info='Contact Us 信息';
+$lang->cmd_form_components='表单附加组件';
+$lang->cmd_agreement='协议条款';
+$lang->form_comps='表单附加组件';
+$lang->eid='组件ID';
+$lang->input_type='组件类别';
+$lang->enable_terms='使用协议条款';
+$lang->about_enable_terms='在页面中使用协议条款.';
+$lang->admin_mail='管理者邮箱';
+$lang->about_admin_mail='多个邮箱地址可用逗号（，）分开.';
+$lang->components_count='表单组件';
+$lang->interval='垃圾邮件过滤';
+$lang->about_interval='所有邮件在指定的时间内都被过滤.';
+$lang->msg_alert_limited_by_config_mail='FAQ';
+$lang->msg_terms_of_license_agreement='You haven\'t read and agree to the terms of the license agreement.';
+$lang->msg_email_send_successfully='An email has been sent successfully.';
+$lang->msg_logged_can_send_mail='Only logged user can send an email';
+$lang->cmd_up='上移';
+$lang->cmd_down='下移';
+$lang->component_name='组件名称';
+$lang->msg_do_set_admin_mail='The recipient is not set. Please contact your administrator.';

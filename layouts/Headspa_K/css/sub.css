@@ -1,0 +1,78 @@
+/*#container{ margin-top:60px; }*/
+#header{ background-color:#fff !important; border-bottom:none; box-shadow:0 0 8px 0 rgba(0,0,0,0.2); }
+#sub_container{ padding-top:70px; display:block; }
+#sub_container img{ max-width:100%; }
+
+.pc_lang > button{ border:1px solid #ddd; color:#333; }
+.pc_lang > ul > li{ background-color:#333; }
+.pc_lang > ul > li > a{ display:flex; padding:7px 10px; text-align:left; align-items:center; color:#fff; }
+
+
+/*********************subtop.css*********************/
+.subtop_wrap{ padding:50px 30px 100px; height:0; background-size:cover; background-position:50% 0; background-repeat:no-repeat; overflow:hidden; position:relative; display:-webkit-box; display:-ms-flexbox; display:-moz-flexbox; display:flex; -webkit-box-align:center; -ms-flex-align:center; align-items:center; -webkit-box-pack:center; -ms-flex-pack:center; justify-content:center; }
+.subtop_txt_wrap{ text-align:center; max-width:1430px; width:100%; }
+.subtop_txt{ max-width:700px; width:100%; margin:0 auto; word-break:keep-all; }
+.subtop_slogan{ font-size:17px; font-weight:300; text-shadow:2px 2px 5px rgba(0,0,0,0.15); }
+.subtop_title{ font-size:50px; font-weight:500; line-height:1.2; text-shadow:2px 2px 5px rgba(0,0,0,0.15); margin-bottom:15px; }
+.subtop_line{ height:2px; width:30px; margin:0 auto 20px; }
+.subtop_subtitle{ font-size:17px; font-weight:400; text-shadow:2px 2px 5px rgba(0,0,0,0.15) }
+
+@media( max-width:750px ){
+	.subtop_title{ font-size:35px; }
+	.subtop_wrap{ padding:70px 20px; min-height:250px !important; }
+}
+
+.location_collapse{ position:absolute; bottom:0; left:0; width:100%; }
+.loc_col_wrap{ max-width:1300px; /*padding:0 20px;*/ margin:0 auto; display:flex; display:-webkit-flexbox; display:-ms-flexbox; -webkit-box-pack:center; -ms-flex-pack:center; justify-content:center; }
+.loc_col{ position:relative; display:-webkit-box; display:-ms-flexbox; display:-moz-flexbox; display:flex; }
+.loc_col_00{ display:-webkit-box; display:-ms-flexbox; display:-moz-flexbox; display:flex; }
+.loc_col_00 a{ display:-webkit-box; display:-ms-flexbox; display:-moz-flexbox; display:flex; width:100%; padding:15px; justify-content:center; align-items:center; font-size:17px; color:#fff; box-sizing:border-box; }
+.loc_btn{ max-width:210px; width:calc(100% - 1px); /*min-width:170px;*/ display:-webkit-box; display:-ms-flexbox; display:-moz-flexbox; display:flex; position:relative; background-color:rgba(97, 80, 37, 0.8); margin-right:1px; }
+.loc_btn:last-child{ margin-right:0; }
+.loc_btn.on{ background-color:#fff; border-color:#fff; }
+/*.loc_btn:after{ content:''; position:absolute; width:7px; height:7px; border-right:1px solid; border-bottom:1px solid; transform:rotate(45deg); right:15px; top:50%; margin-top:-5.25px; }*/
+.loc_btn a{ display:block; box-sizing:border-box; width:100%; font-size:16px; font-weight:400; padding:14px 15px; cursor:pointer; color:#fff; text-align:center; white-space:nowrap; overflow:hidden; text-overflow:ellipsis; }
+.loc_btn.on a{ color:#333; }
+.loc_list{ position:absolute; z-index:999; top:100%; left:-1px; min-width:calc(100% + 2px); display:none; background-color:#fafafa; }
+.loc_list li a{ display:block; padding:13px 15px; font-size:13px; color:#666; }
+.loc_list li a:hover{ background-color:#f5f5f5; }
+
+@media(max-width:750px){
+	.location_collapse{ display:none; }
+}
+
+
+
+
+/*********************content.css*********************/
+.content_wrap{ padding:50px 20px 100px; margin:0 auto; }
+.left_aside{ padding:0 10px 0 0; border-right:1px solid #ddd; }
+.right_aside{ padding:0 0 0 10px; border-right:1px solid #ddd; }
+.content_right{ padding:0 0 0 30px; }
+.content_left{ padding:0 30px 0 0; }
+
+
+
+
+/*********************sub_nav.css*********************/
+.lnb_title{ margin-bottom:20px; border-bottom:1px solid #ddd; }
+.lnb_title span{ margin-bottom:-1px; font-size:21px; font-weight:600; padding:0 10px 10px 0; display:inline-block; }
+.lnb_list > li > a{ padding:10px; display:inline-block; font-size:14px; }
+
+
+/*********************search.css*********************/
+
+
+
+
+
+
+@media( max-width:1024px ){
+	.sub_aside{ display:none; }
+	.sub_content{ width:100%; }
+}
+
+
+@media( max-width:1100px ){
+	#sub_container{ padding-top:0; }
+}

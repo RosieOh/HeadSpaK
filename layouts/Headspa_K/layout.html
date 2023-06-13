@@ -1,0 +1,146 @@
+<include target="./metaHead.html" />
+
+
+
+<div id="container">
+	<include target="./include/header.html" />
+	<include target="./quickmenu/quickmenu.html" />
+	
+	<block cond="$layout_info->layout_type!='main'" class="container" id="sub_container">
+		<load target="./css/sub.css" />
+		<load target="./js/sub.js" />
+		<section class="subtop_wrap col-12">
+			<div class="subtop_txt_wrap">
+				<div cond="$layout_info->subtop_txt_use==='Y'" class="subtop_txt">
+					<h1 cond="$layout_info->subtop_title" class="subtop_title">{$layout_info->subtop_title}</h1>
+					<h3 cond="$layout_info->subtop_subtitle" class="subtop_subtitle">{$layout_info->subtop_subtitle}</h3>
+				</div>
+			</div>
+			<div class="location_collapse">
+				<div class="loc_col_wrap">
+					<block loop="$GNB->list=>$key1,$val1" cond="$val1['selected'] && !$val1['list']">
+						<div class="loc_btn <!--@if($val1['selected'])-->on<!--@end-->" loop="$GNB->list=>$key1,$val1"><a href="{$val1['href']}">{$val1['text']}</a></div>
+					</block>
+					<block loop="$GNB->list=>$key1,$val1" cond="$val1['selected'] && $val1['list']">
+						<block loop="$val1['list']=>$key2,$val2" cond="$val2['selected']">
+							<div class="loc_btn <!--@if($val2['selected'])-->on<!--@end-->" loop="$val1['list']=>$key2,$val2"><a href="{$val2['href']}">{$val2['link']}</a></div>
+						</block>
+					</block>
+				</div>
+			</div>
+		</section>
+		<section class="content_wrap flex_wrap pdh-20" id="content">
+			<div cond="$layout_info->subpage_type==='left'" class="sub_aside left_aside col-20"><include target="./include/aside.html" /></div>
+			<div cond="$layout_info->subpage_type==='full'" class="sub_content content_side col-12">{$content}</div>
+			<div cond="$layout_info->subpage_type==='left'" class="sub_content content_right col-80">{$content}</div>
+			<div cond="$layout_info->subpage_type==='right'" class="sub_content content_left col-80">{$content}</div>
+			<div cond="$layout_info->subpage_type==='right'" class="sub_aside right_aside col-20"><include target="./include/aside.html" /></div>
+		</section>
+	</block>
+
+	<block cond="$layout_info->layout_type=='main'" class="container" id="main_container">
+		<include target="./include/main.html" />
+		<load target="./css/main.css" />
+		<load target="./css/graph.scss" />
+		<load target="./js/main.js" />
+	</block>
+</div>
+
+
+
+
+<!--footer-->
+<div id="footer">
+	<div class="footer_info_wrap">
+		<div class="footer_info">
+			<!--@if($lang_type == 'ko')-->
+			<div class="footer_info_pt pt_lf">
+				<div class="footer_info_box">
+					<div class="footer_pt_info pt_logo"><img src="./img/footer_logo.png"></div>
+					<div class="footer_contact">
+						<!-- <p class="pdh-05">
+							대전광역시 유성구 유성대로 1646 한남대학교 대덕밸리캠퍼스 이노비즈파크 307호<br />
+							TEL : +82-42-826-3773 / FAX : +82-42-825-8818 / E-mail : ecobio@psforyou.net
+						</p> -->
+						<p class="pdh-05">
+							대전광역시 유성구 유성대로 1646<br />
+							TEL : +82-42-826-3773 / FAX : +82-42-825-8818 / E-mail : ecobio@psforyou.net
+						</p>
+						
+					</div>
+					<!-- <h4 class="footer_title">Copyright © by HEAD SPA K Co., Ltd. All Rights Reserved.</h4> -->
+					<h4 class="footer_title">Copyright ⓒ 2015 EcoBio Medical Institute. All Rights Reserved.</h4>
+				</div>
+			</div>
+			<div class="footer_info_pt pt_rt">
+				<div class="footer_info_box">
+					<h5>CS CENTER</h5>
+					<h3>042-826-3773</h3>
+					<p class="time"><span>AM 09:00 ~ PM 06:00</span> &nbsp; &nbsp;<span>MON-FRI</span></p>
+					<p class="time"><span>WEEKEND/HOLIDAY</span> &nbsp; &nbsp;<span>OFF</span></p>
+				</div>
+			</div>
+			<!--@else if($lang_type == 'en')-->
+			<div class="footer_info_pt pt_lf">
+				<div class="footer_info_box">
+					<div class="footer_pt_info pt_logo"><img src="./img/footer_logo.png"></div>
+					<div class="footer_contact">
+						<!-- <p class="pdh-05">
+							Rm.307, Innobiz park, 1646, Yuseong-daero, Yuseong-gu, Daejeon, Republic of Korea<br />
+							PSFORYOU Co.,Ltd. Business No. : 314-86-01654 / TEL : +82-42-826-3773
+						</p> -->
+						<p class="pdh-05">
+							461-6 Hannam jeonmindong Yuseong Daejeon Daedeok Valley Campus Park No. 308 Innobiz<br />
+							TEL : +82-42-826-3773 / FAX : +82-42-825-8818 / E-mail : ecobio@psforyou.net
+						</p>
+						
+					</div>
+					<!-- <h4 class="footer_title">Copyright © by HEAD SPA K Co., Ltd. All Rights Reserved.</h4> -->
+					<h4 class="footer_title">Copyright ⓒ 2015 EcoBio Medical Institute. All Rights Reserved.</h4>
+				</div>
+			</div>
+			<div class="footer_info_pt pt_rt">
+				<div class="footer_info_box">
+					<h5>CS CENTER</h5>
+					<h3>+82-42-826-3773</h3>
+					<p class="time"><span>AM 09:00 ~ PM 06:00</span> &nbsp; &nbsp;<span>MON-FRI</span></p>
+					<p class="time"><span>WEEKEND/HOLIDAY</span> &nbsp; &nbsp;<span>OFF</span></p>
+				</div>
+			</div>
+
+			<!--@else if($lang_type == 'zn-CN')-->
+			<div class="footer_info_pt pt_lf">
+				<div class="footer_info_box">
+					<div class="footer_pt_info pt_logo"><img src="./img/footer_logo.png"></div>
+					<div class="footer_contact">
+						<!-- <p class="pdh-05">
+							Rm.307, Innobiz park, 1646, Yuseong-daero, Yuseong-gu, Daejeon, Republic of Korea<br />
+							PSFORYOU Co.,Ltd. Business No. : 314-86-01654 / TEL : +82-42-826-3773
+						</p> -->
+						<p class="pdh-05">
+							461-6 Hannam jeonmindong Yuseong Daejeon Daedeok Valley Campus Park No. 308 Innobiz<br />
+							TEL : +82-42-826-3773 / FAX : +82-42-825-8818 / E-mail : ecobio@psforyou.net
+						</p>
+
+					</div>
+					<!-- <h4 class="footer_title">Copyright © by HEAD SPA K Co., Ltd. All Rights Reserved.</h4> -->
+					<h4 class="footer_title">Copyright ⓒ 2015 EcoBio Medical Institute. All Rights Reserved.</h4>
+				</div>
+			</div>
+			<div class="footer_info_pt pt_rt">
+				<div class="footer_info_box">
+					<h5>CS CENTER</h5>
+					<h3>+82-42-826-3773</h3>
+					<p class="time"><span>AM 09:00 ~ PM 06:00</span> &nbsp; &nbsp;<span>MON-FRI</span></p>
+					<p class="time"><span>WEEKEND/HOLIDAY</span> &nbsp; &nbsp;<span>OFF</span></p>
+				</div>
+			</div>
+			<!--@end-->
+		</div>
+	</div>
+</div>
+<!--//footer-->
+
+<!-- Mirae Talk Script Ver 2.0   -->
+<script async="true"  src="//log1.toup.net/mirae_log_chat_common.js?adkey=rjvhg" charset="UTF-8"></script> 
+<!-- Mirae Talk Script END Ver 2.0   -->

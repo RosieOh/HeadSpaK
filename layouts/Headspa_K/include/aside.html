@@ -1,0 +1,24 @@
+<aside class="sub_nav_wrap">
+	<!-- LNB -->
+	<nav cond="$layout_info->layout_type === 'sub' && $layout_info->subpage_type !== 'full'" class="sub_nav">
+		<div class="lnb_title" loop="$GNB->list=>$key1,$val1" cond="$val1['selected']">
+			<span>{$val1['text']}</span>
+		</div>
+		<ul class="lnb_list">
+			<li loop="$_selected_menu['list'] => $key1, $val1" class="on"|cond="$val1['selected']">
+				<a href="{$val1['href']}" target="_blank"|cond="$val1['open_window'] == 'Y'" style="color:#464646;"|cond="!$val1['selected']">{$val1['link']}</a>
+				<ul cond="$val1['list']" class="depth2">
+					<li loop="$val1['list'] => $key2, $val2" class="on"|cond="$val2['selected']">
+						<a href="{$val2['href']}" target="_blank"|cond="$val2['open_window'] == 'Y'" style="color:#464646;"|cond="!$val2['selected']">{$val2['link']}</a>
+						<ul cond="$val2['list']" class="depth3">
+							<li loop="$val2['list'] => $key3, $val3" class="on"|cond="$val3['selected']">
+								<a href="{$val3['href']}" style="color:#464646;"|cond="!$val3['selected']">{$val3['link']}</a>
+							</li>
+						</ul>
+					</li>
+				</ul>
+			</li>
+		</ul>
+	</nav>
+	<!-- /LNB -->
+</aside>
