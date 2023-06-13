@@ -1,0 +1,48 @@
+
+<!--@if($lang_type == 'ko')-->
+<div cond="$module_info->banner && !$document_srl" class="banner_wrap">
+    <img src="{$module_info->banner}" />
+</div>
+<!--@else if($lang_type == 'en')-->
+<div cond="$module_info->banner_en && !$document_srl" class="banner_wrap">
+    <img src="{$module_info->banner_en}" />
+</div>
+<!--@end-->
+
+
+<!--@if(!$module_info->colorset)-->
+    {@$module_info->colorset = "white"}
+<!--@end-->
+<!--%import("css/board.css")-->
+
+<!--@if($module_info->colorset == "black")-->
+	<!--%import("css/black.css")-->
+<!--@else-->
+	<!--%import("css/white.css")-->
+<!--@end-->
+<block cond="$module_info->cufon=='y'">
+	<!--// Cufon -->
+	<load target="font/cufon-yui.js" />
+	<load target="font/ngb.font.js" />
+	<script type="text/javascript">
+		Cufon.replace('.boardHeader h1')('.extraVarsList th');
+	</script>
+</block>
+
+<!--@if($mid == 'Alliance')-->
+<include target="hd_wrap.html" />
+<load target="./css/hd_wrap.css" />
+<!--@end-->
+
+<!--@if($mid == 'Inquiry')-->
+<include target="hd_wrap2.html" />
+<load target="./css/hd_wrap2.css" />
+<!--@end-->
+
+{$module_info->header_text}
+<load target="js/jquery.cookie.js" type="body" />
+<div class="board">
+    <div class="boardHeader">
+		<h1 cond="$module_info->title">{$module_info->title}</h1>
+		<p class="boardDescription" cond="$module_info->comment">{$module_info->comment}</p>
+    </div>

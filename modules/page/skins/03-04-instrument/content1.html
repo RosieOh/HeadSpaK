@@ -1,0 +1,85 @@
+<load target="./content.css" />
+<load target="./content.js" />
+<!--@if($lang_type == 'ko')-->
+<div class="sub_wrap">
+	<section class="sub_sec" id="sub01">
+		<div class="sub_con">
+			<div class="sub_title_wrap">
+				<h2>헤드스파 K 기기</h2>
+			</div>
+			<div class="sub_tab_wrap">
+				<div class="sub_tab on" onclick="tabClick(1);">5종 복합 두피 관리기기</div>
+				<div class="sub_tab" onclick="tabClick(2);">헤드스파 스티머</div>
+<!--				<div class="sub_tab">갈바닉이온 두피브러쉬</div>-->
+				<div class="sub_tab" onclick="tabClick(4);">두피 진단기 </div>
+<!--				<div class="sub_tab">Glossystemeter<br /> GL 200</div>-->
+<!--				<div class="sub_tab">유분측정기</div>-->
+<!--				<div class="sub_tab">갈바닉이온 두피브러쉬</div>-->
+				<div class="sub_tab" onclick="tabClick(8);">모션베드</div>
+			</div>
+			<select class="sub_sel">
+				<option value="0">5종 복합 두피 관리기기</option>
+				<option value="1">헤드스파 스티머</option>
+<!--				<option value="2">갈바닉이온 두피브러쉬</option>-->
+				<option value="2">두피 진단기 </option>
+<!--				<option value="3">Glossystemeter GL 200</option> -->
+<!--				<option value="4">유분측정기</option> -->
+<!--				<option value="5">갈바닉이온 두피브러쉬</option> -->
+			</select>
+		</div>
+	</section>
+	<section class="sub_sec" id="sub02">
+		<div class="sub_tabcon_wrap">
+			<div class="sub_tabcon on" id="sub_tabcon_01"><include target="tab_01.html" /></div>
+			<div class="sub_tabcon" id="sub_tabcon_02"><include target="tab_02.html" /></div>
+			<div class="sub_tabcon" id="sub_tabcon_04"><include target="tab_04.html" /></div>
+			<div class="sub_tabcon" id="sub_tabcon_08"><include target="tab_08.html" /></div>
+			<!--			<div class="sub_tabcon"><include target="tab_05.html" /></div>-->
+			<!--			<div class="sub_tabcon"><include target="tab_06.html" /></div>-->
+			<!--			<div class="sub_tabcon"><include target="tab_03.html" /></div>-->
+		</div>
+	</section>
+</div>
+
+
+
+
+
+
+<!--@else if($lang_type == 'en')-->
+<div class="sub_wrap">
+	<section class="sub_sec" id="sub01">
+		<div class="sub_con">
+			<div class="sub_title_wrap">
+				<h2>HeadSpa K device</h2>
+			</div>
+			<div class="sub_tab_wrap">
+				<div class="sub_tab on">5 types of complex scalp management device</div>
+				<div class="sub_tab">Mister</div>
+			<!--	<div class="sub_tab">Galvanic Scalp Brush</div>-->
+				<div class="sub_tab">Scalp analyzer</div>
+				<div class="sub_tab">Glossystemeter<br /> GL 200</div>
+				<div class="sub_tab">Oil content meter</div>
+			</div>
+			<select class="sub_sel">
+				<option value="0">5 types of complex scalp management device</option>
+				<option value="1">Mister</option>
+				<!--option value="2">Galvanic Scalp Brush</option-->
+				<option value="2">Scalp analyzer</option>
+				<option value="3">Glossystemeter GL 200</option>
+				<option value="4">Oil content meter</option>
+			</select>
+		</div>
+	</section>
+	<section class="sub_sec" id="sub02">
+		<div class="sub_tabcon_wrap">
+			<div class="sub_tabcon on"><include target="tab_01.html" /></div>
+			<div class="sub_tabcon"><include target="tab_02.html" /></div>
+<!--			<div class="sub_tabcon"><include target="tab_03.html" /></div>-->
+			<div class="sub_tabcon"><include target="tab_04.html" /></div>
+<!--			<div class="sub_tabcon"><include target="tab_05.html" /></div>-->
+<!--			<div class="sub_tabcon"><include target="tab_06.html" /></div>-->
+		</div>
+	</section>
+</div>
+<!--@end-->

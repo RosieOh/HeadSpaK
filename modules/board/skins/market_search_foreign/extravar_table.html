@@ -1,0 +1,66 @@
+<script id="javascript-sdk" src="//developers.kakao.com/sdk/js/kakao.js"></script>
+<div class="rd_var">
+	<div cond="!$mi->et_var=='2' && $oDocument->isExtraVarsExists() && (!$oDocument->isSecret() || $oDocument->isGranted())" class="ic_wrap">
+		<div class="ic_lf">
+			<!--@foreach($oDocument->getExtraVars() AS $key=>$val)-->
+			<a cond="$val->eid=='insta_address' && $oDocument->getExtraEidValue('insta_address')" class="ic_03" href="https://www.instagram.com/{$oDocument->getExtraEidValue('insta_address')}" target="_blank"><i class="xi-instagram"></i></a>
+			<a cond="$val->eid=='blog_address' && $oDocument->getExtraEidValue('blog_address')" class="ic_04" href="https://blog.naver.com/{$oDocument->getExtraEidValue('blog_address')}" target="_blank"><i class="xi-naver"></i></a>
+			<!--@end-->
+		</div>
+		<div class="ic_rt">
+			<!--@foreach($oDocument->getExtraVars() AS $key=>$val)-->
+			<!--@if($lang_type == 'ko')-->
+			<a cond="$val->eid=='homepage_address' && $oDocument->getExtraEidValue('homepage_address')" class="ic_05" href="{$oDocument->getExtraEidValue('homepage_address')}" target="_blank">홈페이지 보기 <i class="xi-paper-plane"></i></a>
+			<a cond="$val->eid=='reserv_address' && $oDocument->getExtraEidValue('reserv_address')" class="ic_05" href="{$oDocument->getExtraEidValue('reserv_address')}" target="_blank">예약하러 가기 <i class="xi-paper-plane"></i></a>
+			<!--@else if($lang_type == 'en')-->
+			<a cond="$val->eid=='homepage_address' && $oDocument->getExtraEidValue('homepage_address')" class="ic_05" href="{$oDocument->getExtraEidValue('homepage_address')}" target="_blank">Go website <i class="xi-paper-plane"></i></a>
+			<a cond="$val->eid=='reserv_address' && $oDocument->getExtraEidValue('reserv_address')" class="ic_05" href="{$oDocument->getExtraEidValue('reserv_address')}" target="_blank">Make reservation <i class="xi-paper-plane"></i></a>
+			<!--@end-->
+			<!--@end-->
+		</div>
+	</div>
+
+	<table cond="!$mi->et_var && $oDocument->isExtraVarsExists() && (!$oDocument->isSecret() || $oDocument->isGranted())" border="0" cellpadding="0" cellspacing="0" class="var_table">
+		<colgroup>
+			<col width="100px" />
+			<col width="50%" />
+			<col width="100px" />
+			<col width="50%" />
+		</colgroup>
+		<tbody>
+			<tr>
+				<!--@foreach($oDocument->getExtraVars() AS $key=>$val)-->
+				<th cond="$val->eid=='market_name'" class="title"><h3>{$val->name}</h3></th>
+				<td cond="$val->eid=='market_name'" class="cont">{$val->getValueHTML()}</td>
+				<th cond="$val->eid=='open_time'" class="title"><h3>{$val->name}</h3></th>
+				<td cond="$val->eid=='open_time'" class="cont">{$val->getValueHTML()}</td>
+				<!--@end-->
+			</tr>
+			<tr>
+				<!--@foreach($oDocument->getExtraVars() AS $key=>$val)-->
+				<th cond="$val->eid=='address'" class="title"><h3>{$val->name}</h3></th>
+				<td cond="$val->eid=='address'" class="cont"><!--@if($oDocument->getExtraEidValue('zipcode'))-->[{$oDocument->getExtraEidValue('zipcode')}]<!--@end--> {$oDocument->getExtraEidValue('address_add')}, {$oDocument->getExtraEidValue('address')}</td>
+
+				<th cond="$val->eid=='phone_no'" class="title"><h3>{$val->name}</h3></th>
+				<td cond="$val->eid=='phone_no'" class="cont">
+					<!--@if(htmlspecialchars($oDocument->getExtraEidValue('phone_no')))-->
+					{htmlspecialchars($oDocument->getExtraEidValue('phone_no'))}
+					<!--@end-->
+				</td>
+				<!--@end-->
+			</tr>
+			<tr>
+				<!--@foreach($oDocument->getExtraVars() AS $key=>$val)-->
+				<th cond="$val->eid=='detail_etc'" class="title"><h3>{$val->name}</h3></th>
+				<td colspan="3" cond="$val->eid=='detail_etc'" class="cont">{$val->getValueHTML()}</td>
+				<!--@end-->
+			</tr>
+			<tr>
+				<!--@foreach($oDocument->getExtraVars() AS $key=>$val)-->
+				<th cond="$val->eid=='facility'" class="title"><h3>{$val->name}</h3></th>
+				<td colspan="3" cond="$val->eid=='facility'" class="cont">{$val->getValueHTML()}</td>
+				<!--@end-->
+			</tr>
+		</tbody>
+	</table>
+</div>
