@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<widget version="0.2">
+    <title xml:lang="ko">Contact Free</title>
+    <description xml:lang="ko">게시판과 연동하여 문의접수를 받을 수 있습니다</description>
+    <version>1.1</version>
+    <date>2011-05-23</date>
+
+    <author email_address="wiley@nurigo.net" link="http://www.nurigo.net">
+        <name xml:lang="ko">wiley</name>
+    </author>
+
+    <extra_vars>
+        <var id="target_mid">
+            <type>text</type>
+            <name xml:lang="ko">대상모듈명</name>
+            <description xml:lang="ko">요청 글이 등록될 게시판의 mid 값(게시판 모듈이름)을 입력하세요.</description>
+        </var>
+    </extra_vars>
+</widget>

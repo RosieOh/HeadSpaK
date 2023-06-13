@@ -1,0 +1,20 @@
+<div class="wid_sli_wrap">
+    <div class="wid_nav" id="wid_prev"><i class="xi-arrow-left"></i></div>
+    <div class="wid_nav" id="wid_next"><i class="xi-arrow-right"></i></div>
+    <div class="swiper-container" id="wid_sli">
+        <div class="swiper-wrapper">
+        {@$_idx=0}
+        <!--@foreach($widget_info->content_items as $key => $item)-->        
+        <div class="swiper-slide wid_sli" style="display:none"|cond="$_idx >= $widget_info->list_count">
+            <div class="wid_sli_box">
+                <h4><a href="{getSiteUrl($item->domain, '', 'mid', $item->get('mid'))}" target="_blank"|cond="$widget_info->new_window">{$item->getBrowserTitle()}</a></h4>
+                <h3><a href="{$item->getLink()}" target="_blank"|cond="$widget_info->new_window">{$item->getTitle($widget_info->subject_cut_size)}</a></h3>
+                <p>{$item->getContent()}</p>
+                <p class="date">{$item->getRegdate("Y-m-d")}</p>
+            </div>
+        </div>
+        {@$_idx++}
+        <!--@end-->
+        </div>
+    </div>
+</div>
